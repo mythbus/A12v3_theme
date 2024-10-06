@@ -10,9 +10,10 @@
   <div class="fs-split">
 
     <!-- Image -->
-    <div class="split-image">
-      <!-- Image content goes here -->
-    </div>
+    {{ if .Site.Params.visual.image.enable }}
+      <div class="split-image">
+      </div>
+    {{ end }}
 
     <!-- Content Side -->
     <div class="split-content">
@@ -24,8 +25,10 @@
         <!-- Bio -->
         {{ partial "bio" . }}
 
-        <!-- Video Embed -->
-        {{ partial "video-embed" . }}
+        <!-- Video -->
+        {{ if .Site.Params.visual.video.enable }}
+          {{ partial "video-embed" . }}
+        {{ end }}
 
         <!-- Links -->
         {{ partial "links" . }}
